@@ -13,13 +13,26 @@ loginLink.addEventListener('click' , ()=> {
 
 
 
-function login(){
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+// Define admin credentials
+const adminCredentials = {
+    username: 'admin@123', 
+    password: '1234' 
+};
 
-    if (email === 'admin' && password === '1234') {
-        window.location.href = 'AdminPanel/AdminPanel.html';
+// Add event listener to the form
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting
+
+    // Capture input values
+    const enteredUsername = document.getElementById('adminEmail').value;
+    const enteredPassword = document.getElementById('adminPassword').value;
+
+    // Check credentials
+    if (enteredUsername === adminCredentials.username && enteredPassword === adminCredentials.password) {
+        document.getElementById('message').innerText = 'Login successful! Welcome Admin!';
+        // Redirect to admin dashboard 
+        window.location.href = 'AdminPanel/AdminPanel.html';  
     } else {
-        alert('Invalid login. Please try again.');
+        document.getElementById('message').innerText = 'Invalid username or password. Please try again.';
     }
-}
+});
