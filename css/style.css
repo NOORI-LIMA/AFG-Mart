@@ -646,6 +646,9 @@ background: linear-gradient(to right,#c37e0f,#ffc108);
   color: #fff !important;
   font-weight: 500 !important;
 }
+.form-btn:hover {
+  background: #c90040;
+}
 .login-register {
   font-size: .9em;
   color: #203e5d;
@@ -665,6 +668,12 @@ background: linear-gradient(to right,#c37e0f,#ffc108);
   color: #203e5d;
   text-decoration: none;
   font-weight: 600;
+}
+#message{
+    color: #203e5d;
+    font-size: .9em;
+    text-align: center;
+    font-weight: 500;
 }
 .login-link p {
   color: #203e5d;
