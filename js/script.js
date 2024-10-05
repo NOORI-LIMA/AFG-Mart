@@ -11,15 +11,35 @@ loginLink.addEventListener('click' , ()=> {
     wrapper.classList.remove('active');
 });
 
+// Define admin credentials
+const adminCredentials = {
+    username: 'admin@123', 
+    password: '1234' 
+};
 
+// Add event listener to the form
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting
 
-function login(){
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    // Capture input values
+    const enteredUsername = document.getElementById('adminEmail').value;
+    const enteredPassword = document.getElementById('adminPassword').value;
 
-    if (email === 'admin' && password === '1234') {
-        window.location.href = 'AdminPanel/AdminPanel.html';
+    // Check credentials
+    if (enteredUsername === adminCredentials.username && enteredPassword === adminCredentials.password) {
+        document.getElementById('message').innerText = 'Login successful! Welcome Admin!';
+        // Redirect to admin dashboard 
+        window.location.href = 'AdminPanel/AdminPanel.html';  
     } else {
-        alert('Invalid login. Please try again.');
+        document.getElementById('message').innerText = 'Invalid username or password. Please try again.';
     }
+});
+
+// change profile 
+let profilePic = document.getElementById("Profile-pic");
+let inputFile = document.getElementById("input-file");
+
+inputFile.onchange = function () {
+    profilePic.src = URL.createObjectURL(inputFile.files[0]);
 }
+
