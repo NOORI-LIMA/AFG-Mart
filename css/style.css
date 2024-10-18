@@ -526,7 +526,7 @@ background: linear-gradient(to right,#c37e0f,#ffc108);
   z-index: 10;
 }
 .wrapper.active {
-  height: 700px;
+  height: 800px;
   
 }
 
